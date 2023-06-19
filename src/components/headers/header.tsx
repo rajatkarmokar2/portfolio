@@ -22,34 +22,22 @@ const Header = () => {
 				<nav>
 					<ul className='capitalize flex gap-8'>
 						<li>
-							<NavLink to='/' className='[&.active]:underline underline-offset-8'>
-								home
-							</NavLink>
+							<CustomNavlink to='/'>home</CustomNavlink>
 						</li>
 						<li>
-							<NavLink to='/about' className='[&.active]:underline underline-offset-8'>
-								about
-							</NavLink>
+							<CustomNavlink to='/about'>about</CustomNavlink>
 						</li>
 						<li>
-							<NavLink to='/portfolio' className='[&.active]:underline underline-offset-8'>
-								portfolio
-							</NavLink>
+							<CustomNavlink to='/portfolio'>portfolio</CustomNavlink>
 						</li>
 						<li>
-							<NavLink to='/services' className='[&.active]:underline underline-offset-8'>
-								services
-							</NavLink>
+							<CustomNavlink to='/services'>services</CustomNavlink>
 						</li>
 						<li>
-							<NavLink to='/pages' className='[&.active]:underline underline-offset-8'>
-								pages
-							</NavLink>
+							<CustomNavlink to='/pages'>pages</CustomNavlink>
 						</li>
 						<li>
-							<NavLink to='/contact' className='[&.active]:underline underline-offset-8'>
-								contact
-							</NavLink>
+							<CustomNavlink to='/contact'>contact</CustomNavlink>
 						</li>
 					</ul>
 				</nav>
@@ -76,5 +64,12 @@ const IconWrapper = (props: any) => {
 		<div className='h-10 border aspect-square rounded-full flex items-center text-lg justify-center hover:text-black transition-all hover:bg-white hover:scale-125'>
 			{props.children}
 		</div>
+	)
+}
+const CustomNavlink = (props: any) => {
+	return (
+		<NavLink to={props.to} className='[&.active]:underline underline-offset-8 transition-all hover:underline'>
+			{props.children}
+		</NavLink>
 	)
 }
