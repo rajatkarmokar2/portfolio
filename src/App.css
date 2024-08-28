@@ -1,0 +1,33 @@
+.triangle {
+    width        : 0;
+    height       : 0;
+    border-left  : 50px solid transparent;
+    border-right : 50px solid transparent;
+    border-bottom: 87px solid black;
+    /* Adjust the color to your preference */
+    border-radius: 12px;
+    /* Rounded corners */
+}
+
+.triangle-border {
+    border-bottom: 87px solid transparent;
+    border-left  : 50px solid transparent;
+    border-right : 50px solid transparent; 
+    border-top   : 50px solid transparent;
+    border-radius: 12px;
+}
+
+.triangle-border::after {
+    content      : '';
+    display      : block;
+    position     : absolute;
+    top          : -50px;
+    left         : -50px;
+    width        : 0;
+    height       : 0;
+    border-left  : 50px solid transparent;
+    border-right : 50px solid transparent;
+    border-bottom: 87px solid #fff;
+    /* Border color */
+    border-radius: 12px;
+}
