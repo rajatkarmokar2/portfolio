@@ -22,18 +22,27 @@ const ProjectDetails = () => {
                 </Breadcrumbs>
             </div>
 
-            <div className='space-y-10'>
+            <div className='space-y-16'>
                 <div className='text-center my-16'>
                     <HeroH1>{ project.title }</HeroH1>
                     <p className='mb-3'>{ project.description }</p>
                 </div>
-                <div className='grid grid-cols-9 gap-6'>
-                    <div className='col-span-7'>
-                        <Image isBlurred src={ project.images.desktop } />
-                    </div>
-                    <div className='col-span-2'>
-                        <Image isBlurred src={ project.images.mobile } />
-                    </div>
+
+                <div>
+                    { project.images.noPreview &&
+                        <div>
+                            <Image className='aspect-video lg:aspect-[8/2] object-contain' isBlurred src={ project.images.noPreview } />
+                        </div>
+                        ||
+                        <div className='grid grid-cols-1 md:grid-cols-9 gap-2 lg:gap-6'>
+                            <div className='md:col-span-7'>
+                                <Image className='aspect-video w-full' isBlurred src={ project.images.desktop } />
+                            </div>
+                            <div className='md:col-span-2 flex justify-center'>
+                                <Image className='w-1/2 md:w-full mx-auto' isBlurred src={ project.images.mobile } />
+                            </div>
+                        </div>
+                    }
                 </div>
 
                 <div className='text-center'>
@@ -46,7 +55,7 @@ const ProjectDetails = () => {
                                         <div className='py-2'>
                                             { item }
                                         </div>
-                                        <Divider className='last:hidden'/>
+                                        <Divider className='last:hidden' />
                                     </>
                                 ) }
                             </div>

@@ -11,15 +11,16 @@ const ProjectCard = ( { showImage = true,...props } ) => {
                     { showImage &&
                         <div className='col-span-1'>
                             <Link as={ NavLink } to={ `/projects/${encodeURIComponent( props.title )}` }>
-                                <Image className='aspect-video' isZoomed isBlurred src={ props?.images?.desktop } alt={ props.title } />
+                                <Image className='aspect-video' isZoomed isBlurred src={ props?.images?.noPreview || props?.images?.desktop } alt={ props.title } />
                             </Link>
                         </div> ||
-                        null }
+                        null
+                    }
                     <div className='space-y-2 mt-auto'>
                         <h3 className='text-xl font-semibold'>{ props.title }</h3>
                         <p className='text-xs'>{ props.duration }</p>
                         <p className='line-clamp-2'>{ props.description }</p>
-                        <Button isIconOnly as={ Link } target='_blank' href={ props.link } >
+                        <Button isDisabled={ !!props?.images?.noPreview } isIconOnly as={ Link } target='_blank' href={ props.link } >
                             <IconExternalLink />
                         </Button>
                     </div>

@@ -104,7 +104,9 @@ const Skills = () => {
             </div>
             <div className='py-14'>
                 <Card className="p-4 flex justify-center items-center relative aspect-square w-[var(--width)] mx-auto overflow-visible rounded-full" style={ { "--width": 'clamp(200px,30vw,400px)' } }>
-                    <p className={ `absolute text-6xl font-semibold text-gray-500 ${radius ? 'scale-100' : 'scale-0'}` }>Skills</p>
+                    <p className={ `absolute text-6xl font-semibold text-gray-500 ${radius ? 'scale-100' : 'scale-0'}` }>
+                        <HeroH1>Skills</HeroH1>
+                    </p>
 
                     { skillList.map( ( skill,index ) => {
                         return (
@@ -133,7 +135,9 @@ const Skills = () => {
                                     </Button>
                                     {/* </Tooltip> */ }
                                 </motion.div>
-                                <p className='absolute text-6xl font-semibold text-gray-500 opacity-0 peer-hover:opacity-100 peer-hover:bg-white peer-hover:dark:bg-black transition-all duration-1000 size-[var(--width)] pointer-events-none flex items-center justify-center rounded-full'>{ skill.name }</p>
+                                <p className='absolute text-6xl font-semibold text-gray-500 opacity-0 peer-hover:opacity-100 peer-hover:bg-white peer-hover:dark:bg-black transition-all duration-1000 size-[var(--width)] pointer-events-none flex items-center justify-center rounded-full'>
+                                    <HeroH1>{ skill.name }</HeroH1>
+                                </p>
                             </div>
                         );
                     } ) }
