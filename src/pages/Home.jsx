@@ -48,7 +48,7 @@ const Hero = () => {
                 </div>
                 <div className='lg:col-span-5 '>
                     <Card className=' w-full overflow-hidden bg-transparent' shadow='none'>
-                        <Image isBlurred className='size-full' src="/public/assets/images/profile/linkedin-profile-Photoroom.png" />
+                        <Image isBlurred className='size-full' src="/assets/images/profile/linkedin-profile-Photoroom.png" />
                     </Card>
                 </div>
             </div>

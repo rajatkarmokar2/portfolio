@@ -14,9 +14,9 @@ export const projectList = [
             "Adding Razor payment method to make payment securely",
         ],
         images:{
-            mobile:'/public/assets/images/projects/socialout.co-screenshots/Galaxy-Note20-Ultra-390x830.png',
-            desktop:'/public/assets/images/projects/socialout.co-screenshots/Pixelbook-Go-1643x924.png',
-            desktopMockup:'/public/assets/images/projects/socialout.co-screenshots/Pro-Display-XDR-1544x1145.png',
+            mobile:'/assets/images/projects/socialout.co-screenshots/Galaxy-Note20-Ultra-390x830.png',
+            desktop:'/assets/images/projects/socialout.co-screenshots/Pixelbook-Go-1643x924.png',
+            desktopMockup:'/assets/images/projects/socialout.co-screenshots/Pro-Display-XDR-1544x1145.png',
         },
         technologies:[
             // skills.Javascript
@@ -32,8 +32,8 @@ export const projectList = [
             "Creating Email Dashboard like Gmail and integrating additional features for mail security",
         ],
         images:{
-            mobile:'/public/assets/images/projects/forfend.co-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
-            desktop:'/public/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
+            mobile:'/assets/images/projects/forfend.co-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
+            desktop:'/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
         }
     },
     {
@@ -66,8 +66,8 @@ export const projectList = [
             "Collaborating with Marketing team to optimize website SEO",
         ],
         images:{
-            mobile:'/public/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
-            desktop:'/public/assets/images/projects/prompitup.com-screenshots/Pixelbook-Go-1643x924.png',
+            mobile:'/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
+            desktop:'/assets/images/projects/prompitup.com-screenshots/Pixelbook-Go-1643x924.png',
         }
     },
     {
@@ -81,8 +81,8 @@ export const projectList = [
             "Collaborating with Marketing team to optimize website SEO",
         ],
         images:{
-            mobile:'/public/assets/images/projects/thinkgestalt.design-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
-            desktop:'/public/assets/images/projects/thinkgestalt.design-screenshots/Pixelbook-Go-1643x924.png',
+            mobile:'/assets/images/projects/thinkgestalt.design-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
+            desktop:'/assets/images/projects/thinkgestalt.design-screenshots/Pixelbook-Go-1643x924.png',
         }
     },
     {
@@ -96,8 +96,8 @@ export const projectList = [
             "Collaborating with Marketing team to optimize website SEO",
         ],
         images:{
-            mobile:'/public/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
-            desktop:'/public/assets/images/projects/thinkgestalt.media-screenshots/Pixelbook-Go-1643x924.png',
+            mobile:'/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
+            desktop:'/assets/images/projects/thinkgestalt.media-screenshots/Pixelbook-Go-1643x924.png',
         }
     },
     {
@@ -111,8 +111,8 @@ export const projectList = [
             "Collaborating with Marketing team to optimize website SEO",
         ],
         images:{
-            mobile:'/public/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
-            desktop:'/public/assets/images/projects/thinkgestalt.tech-screenshots/Pixelbook-Go-1642.9862060546875x923.9931030273438.png',
+            mobile:'/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
+            desktop:'/assets/images/projects/thinkgestalt.tech-screenshots/Pixelbook-Go-1642.9862060546875x923.9931030273438.png',
         }
     },
     {
@@ -126,8 +126,8 @@ export const projectList = [
             "Collaborating with Marketing team to optimize website SEO",
         ],
         images:{
-            mobile:'/public/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
-            desktop:'/public/assets/images/projects/percipiencelabs.co-screenshots/Pixelbook-Go-1642.98828125x923.984375.png',
+            mobile:'/assets/images/projects/prompitup.com-screenshots/Galaxy-S20-386.9921875x857.98828125.png',
+            desktop:'/assets/images/projects/percipiencelabs.co-screenshots/Pixelbook-Go-1642.98828125x923.984375.png',
         }
     },
 ];
