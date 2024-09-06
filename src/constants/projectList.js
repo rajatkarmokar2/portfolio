@@ -30,7 +30,7 @@ export const projectList = [
             "Creating Email Dashboard like Gmail and integrating additional features for mail security",
         ],
         images: {
-            mobile: '/public/assets/images/projects/forfend.co-screenshots/Galaxy-Note20-Ultra-390x830.png',
+            mobile: '/assets/images/projects/forfend.co-screenshots/Galaxy-Note20-Ultra-390x830.png',
             desktop: '/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
         }
     },
@@ -43,9 +43,9 @@ export const projectList = [
             "Collaboration with UI/UX Designer and Backend for good development",
         ],
         images: {
-            // mobile:'/public/assets/images/no-preview/no-preview.jfif',
+            // mobile:'/assets/images/no-preview/no-preview.jfif',
             // desktop:'/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
-            noPreview: '/public/assets/images/no-preview/no-preview.jfif',
+            noPreview: '/assets/images/no-preview/no-preview.jfif',
         }
     },
     {
@@ -104,7 +104,7 @@ export const projectList = [
             "Collaborating with Marketing team to optimize website SEO",
         ],
         images: {
-            mobile: '/public/assets/images/projects/thinkgestalt.tech-screenshots/Galaxy-Note20-Ultra-390.0000305175781x830.0000610351562.png',
+            mobile: '/assets/images/projects/thinkgestalt.tech-screenshots/Galaxy-Note20-Ultra-390.0000305175781x830.0000610351562.png',
             desktop: '/assets/images/projects/thinkgestalt.tech-screenshots/Pixelbook-Go-1642.9862060546875x923.9931030273438.png',
         }
     },
@@ -133,9 +133,9 @@ export const projectList = [
             "Using modern framework like Next.js for optimal SSR web application",
         ],
         images: {
-            // mobile:'/public/assets/images/no-preview/no-preview.jfif',
+            // mobile:'/assets/images/no-preview/no-preview.jfif',
             // desktop:'/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
-            noPreview: '/public/assets/images/no-preview/no-preview.jfif',
+            noPreview: '/assets/images/no-preview/no-preview.jfif',
         },
         technologies:{
 
