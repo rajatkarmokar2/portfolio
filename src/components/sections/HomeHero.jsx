@@ -5,13 +5,14 @@ const HomeHero = () => {
     return (
         <div className='space-y-4'>
             <p className='font-light'>Hey, I'm</p>
-            <h1 className='text-8xl font-bold font leading-tight font-medievalSharp'>
+            <h1 className='text-8xl font-bold font leading-tight '>
                 <GradientText>
                     Rajat Karmokar
                 </GradientText>
             </h1>
             <p className='font-light'>
-                I'm a software engineer based in Toronto, Canada and also a communication and journalism student. I enjoy creating things that live on the internet, whether that be websites, applications, or anything in between. I have been freelancing for a year now while studying at the university and I've manage to gain a decent amount of experience and valuable knowledge from all different kinds of fields throughout my projects/work.
+                I worked as a React Developer and have 2+ years of Experience in the field of Front-End Developer. Worked on 5+ websites / web applications and 3+ Mobile Applications,
+                Having good knowledge of popular Frameworks like React, Next and Node.
             </p>
             <div className='flex w-max gap-2 items-center !mt-12 cursor-pointer group'>
                 <span className='text-xl font-light '>Say hi</span>

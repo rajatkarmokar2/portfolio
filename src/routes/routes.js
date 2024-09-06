@@ -6,6 +6,7 @@ const Contact = lazy( () => import( '../pages/Contact' ) )
 const Resume = lazy( () => import( '../pages/Resume' ) )
 const Error404 = lazy( () => import( '../pages/Error404' ) )
 const Coming = lazy( () => import( '../pages/Coming' ) )
+const ProjectDetails = lazy( () => import( '../pages/ProjectDetails' ) )
 const Loading = lazy( () => import( '../pages/Loading' ) )
 
 export const routes = [
@@ -36,6 +37,11 @@ export const layoutRoutes = [
         path: '/projects',
         title: 'Projects',
         component: Projects,
+    },
+    {
+        path: '/projects/:projectId',
+        title: 'Projects Details',
+        component: ProjectDetails,
     },
     {
         path: '/contact',
