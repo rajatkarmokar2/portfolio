@@ -1,6 +1,6 @@
 import React from 'react'
 import Container from '../components/containers/Container'
-import { BreadcrumbItem,Breadcrumbs,Card,CardBody,Divider,Image,Tab,Tabs } from '@nextui-org/react'
+import { BreadcrumbItem,Breadcrumbs,Button,Card,CardBody,Divider,Image,Tab,Tabs,Tooltip } from '@nextui-org/react'
 import { NavLink,useParams } from 'react-router-dom'
 import { projectList } from '../constants/projectList'
 import SectionH1 from '../components/headings/SectionH1'
@@ -30,7 +30,16 @@ const ProjectDetails = () => {
                 <div className='space-y-16'>
                     <div className='text-center my-16'>
                         <HeroH1>{ project.title }</HeroH1>
-                        <p className='mb-3'>{ project.description }</p>
+                        <p className='mb-3 max-w-[40rem] mx-auto'>{ project.description }</p>
+                        <div className='text-center flex justify-center gap-4 flex-wrap'>
+                            { project.technologies.map( ( item,index ) =>
+                                <Tooltip placement='bottom' content={ item.name }>
+                                    <Button isIconOnly className='!size-14 rounded-full'>
+                                        <item.icon className='size-1/2' />
+                                    </Button>
+                                </Tooltip>
+                            ) }
+                        </div>
                     </div>
 
                     <div>
@@ -49,6 +58,11 @@ const ProjectDetails = () => {
                             </div>
                         }
                     </div>
+
+                    {/* <div className='text-center'>
+                        <SectionH1>Technologies</SectionH1>
+                       
+                    </div> */}
 
                     <div className='text-center'>
                         <SectionH1>Roles</SectionH1>

@@ -29,13 +29,12 @@ const HomeSkills = () => {
     const speed = 0.005;
 
     useEffect( () => {
-        let interval
         const expandTimeout = setTimeout( () => {
             setRadius( maxRadius );
-            interval = setInterval( () => {
-                setRotate( ( prevAngle ) => prevAngle + speed );
-            },16 );
         },2000 );
+        let interval = setInterval( () => {
+            setRotate( ( prevAngle ) => prevAngle + speed );
+        },16 );
         return () => {
             clearInterval( interval ); // Cleanup interval on component unmount
             clearTimeout( expandTimeout ); // Cleanup timeout

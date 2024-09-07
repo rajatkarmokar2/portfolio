@@ -18,7 +18,7 @@ export default {
 
     extend: {
       fontFamily: {
-        medievalSharp: '"MedievalSharp",cursive',
+        // medievalSharp: '"MedievalSharp",cursive',
         inter: '"Inter", sans-serif'
       },
       // animation >>>>>>>>>>>>>>>

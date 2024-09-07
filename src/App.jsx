@@ -3,7 +3,6 @@ import { lazy,Suspense } from 'react'
 import { Route,Routes } from 'react-router-dom'
 import Loading from './pages/Loading'
 import { layoutRoutes,routes } from './routes/routes'
-import { Helmet } from 'react-helmet'
 import useScrollToTop from './hooks/useScrollToTop'
 const Layout = lazy( () => import( './layouts/Layout' ) )
 

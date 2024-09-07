@@ -1,4 +1,4 @@
-import { IconBrandBootstrap, IconBrandCss3, IconBrandHtml5, IconBrandJavascript, IconBrandNextjs, IconBrandNodejs, IconBrandReact, IconBrandTailwind } from "@tabler/icons-react";
+import { IconBrandBootstrap, IconBrandCss3, IconBrandHtml5, IconBrandJavascript, IconBrandNextjs, IconBrandNodejs, IconBrandReact, IconBrandReactNative, IconBrandTailwind } from "@tabler/icons-react";
 
 export const skillList = [
     {
@@ -17,8 +17,13 @@ export const skillList = [
         color: 'blue',
     },
     {
-        name: "React",
+        name: "React Js",
         icon: IconBrandReact,
+        color: 'skyblue',
+    },
+    {
+        name: "React Native",
+        icon: IconBrandReactNative,
         color: 'skyblue',
     },
     {
