@@ -8,7 +8,7 @@ const HomeHero = () => {
         <Container>
             <div className='md:h-[500px] max-h-max grid grid-cols-1 md:grid-cols-12 items-center gap-4'>
                 <div className='md:col-span-5 md:order-2 flex justify-center'>
-                    <Image isBlurred className='rounded-full w-[200px] md:w-auto' src="/assets/images/profile/profile-pic.png" />
+                    <Image isBlurred className='rounded-full max-w-[200px] md:max-w-full' src="/assets/images/profile/profile-pic.png" />
                 </div>
                 <div className='md:col-span-7 md:order-1'>
                     <div className='text-center md:text-start space-y-4'>
