@@ -11,10 +11,14 @@ import SectionH1 from '../components/headings/SectionH1';
 import HomeHero from '../components/sections/HomeHero';
 import HomeProjects from '../components/sections/HomeProjects';
 import HomeSkills from '../components/sections/HomeSkills';
+import { Helmet } from 'react-helmet';
 
 const Home = () => {
     return (
         <>
+            <Helmet>
+                <title>Home - Rajat Karmokar</title>
+            </Helmet>
             <div className="min-h-screen space-y-20 py-6">
                 <HomeHero />
                 <HomeSkills />

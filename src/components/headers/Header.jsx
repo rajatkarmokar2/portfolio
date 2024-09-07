@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Navbar,NavbarBrand,NavbarContent,NavbarItem,Link,NavbarMenuItem,NavbarMenuToggle,NavbarMenu,Button } from "@nextui-org/react";
+import { Navbar,NavbarBrand,NavbarContent,NavbarItem,Link,NavbarMenuItem,NavbarMenuToggle,NavbarMenu,Button, Image } from "@nextui-org/react";
 import { NavLink,useLocation } from 'react-router-dom';
 import { navbarLinkList } from '../../constants/navbarLinkList';
 import useDarkMode from '../../hooks/useDarkMode';
@@ -97,14 +97,33 @@ const Header = () => {
                     </NavbarItem>
                     <NavbarItem>
                         <Button color='primary' as={ Link } href="/assets/pdf/resume/Rajat-Resume-2xp.pdf" >
-                            Download CV
+                            <span className=''>Download CV</span>
                         </Button>
                     </NavbarItem>
                 </NavbarContent>
                 <NavbarMenu>
-                    <NavBarLinkList />
+                    <NavbarContent className='flex flex-col justify-center'>
+                        <NavBarLinkList />
+                        <NavbarItem>
+                            <Button color='primary' as={ Link } href="/assets/pdf/resume/Rajat-Resume-2xp.pdf" >
+                                <span className=''>Download CV</span>
+                            </Button>
+                        </NavbarItem>
+                    </NavbarContent>
                 </NavbarMenu>
                 <NavbarContent className="sm:hidden" justify='end'>
+                    <NavbarItem>
+                        <Button
+                            onClick={ toggleDarkMode }
+                            className="transition-all duration-300"
+                            variant="ghost"
+                            isIconOnly
+                            size='sm'
+                        >
+                            { isDarkMode ? <IconSun size='20' /> : <IconMoon size='20' /> }
+                            {/* { isDarkMode ? 'Light Mode' : 'Dark Mode' } */ }
+                        </Button>
+                    </NavbarItem>
                     <NavbarMenuToggle
                         aria-label={ isMenuOpen ? "Close menu" : "Open menu" }
                     />
@@ -120,9 +139,7 @@ const AppLogo = () => {
     return (
         <div className='flex items-center gap-2'>
             <div>
-                <p className='text-3xl/none font-medievalSharp tracking-[-0.4em] me-3'>
-                    RR
-                </p>
+                <Image className='size-9 invert dark:invert-0' src='/assets/logos/logo-v2.svg' alt='Brand' />
             </div>
             <div>
                 <p className='text-base font-medium'>Rajat Karmokar</p>
