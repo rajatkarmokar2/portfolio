@@ -2,7 +2,7 @@ import React from 'react'
 import Container from '../containers/Container'
 import { Link,NavLink } from 'react-router-dom'
 import Button from '../buttons/Button'
-import { contactList } from './../../constants/contactList';
+import { contactList } from '../../constants/contactList';
 
 const Footer = () => {
     return (
