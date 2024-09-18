@@ -1,11 +1,11 @@
 /** @type {import('tailwindcss').Config} */
-const { nextui } = require( "@nextui-org/react" );
 
 export default {
+  darkMode: "class",
+  plugins: [],
   content: [
     "./index.html",
     "./src/**/*.{js,ts,jsx,tsx}",
-    "./node_modules/@nextui-org/theme/dist/**/*.{js,ts,jsx,tsx}"
   ],
   theme: {
     screens: {
@@ -17,20 +17,39 @@ export default {
     },
 
     extend: {
-      fontFamily: {
-        // medievalSharp: '"MedievalSharp",cursive',
-        inter: '"Inter", sans-serif'
+      colors: {
+        darkblue: '#242A41',
+        dark: '#1D2131',
       },
-      // animation >>>>>>>>>>>>>>>
+
+      fontFamily: {
+        inter: '"Inter", sans-serif',
+        manrope: '"Manrope", sans-serif'
+      },
+
+      backgroundColor: {
+        page: '#111111'
+      },
+
+      backgroundSize: {
+        '200': '200% 200%',
+        '400': '400% 400%',
+      },
+
+      backgroundImage: {
+        "gradient-text": "linear-gradient(90deg,gray 20%,#eee 40%,#eee 60%,gray 80%)",
+        "gradient-purple-text": "linear-gradient(100deg,purple,cyan)",
+      },
+
       keyframes: {
-        gradient: {
-          '0%, 100%': {
-            'background-size': '200% 200%',
-            'background-position': 'left center',
+        "gradient-text": {
+          '0%': {
+            'background-size': '200% auto',
+            'background-position': '0% center',
           },
-          '50%': {
-            'background-size': '200% 200%',
-            'background-position': 'right center',
+          '100%': {
+            'background-size': '200% auto',
+            'background-position': '200% center',
           },
         },
         radius: {
@@ -42,19 +61,13 @@ export default {
           },
         },
       },
+
       animation: {
-        'gradient-text': 'gradient 3s ease infinite',
-      },
-      animation: {
+        'gradient-text': 'gradient-text 10s linear infinite reverse',
         'radius': 'radius 3s 3s',
       },
-      // animation <<<<<<<<<<<<<<
 
-      backgroundColor: {
-        page: '#111111'
-      }
     },
   },
-  darkMode: "class",
-  plugins: [ nextui() ]
+  
 }

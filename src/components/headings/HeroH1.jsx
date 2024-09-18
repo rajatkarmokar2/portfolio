@@ -2,7 +2,7 @@ import React from 'react'
 
 const HeroH1 = ( { children } ) => {
   return (
-    <h1 className="text-4xl md:text-5xl mb-3 lg:text-7xl font-bold bg-[linear-gradient(lightblue,black)] dark:bg-[linear-gradient(lightblue,gray)] text-transparent bg-clip-text lg:leading-tight ">{ children }</h1>
+    <h1 className="text-[clamp(46px,5vw,56px)] mb-3 font-bold lg:leading-tight text-dark dark:text-white">{ children }</h1>
   )
 }
 

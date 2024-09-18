@@ -1,150 +1,134 @@
-import { useState } from 'react'
-import { Navbar,NavbarBrand,NavbarContent,NavbarItem,Link,NavbarMenuItem,NavbarMenuToggle,NavbarMenu,Button, Image } from "@nextui-org/react";
-import { NavLink,useLocation } from 'react-router-dom';
+import { useEffect,useState } from 'react';
+import { NavLink } from 'react-router-dom';
 import { navbarLinkList } from '../../constants/navbarLinkList';
 import useDarkMode from '../../hooks/useDarkMode';
-import { IconMoon,IconSun } from '@tabler/icons-react';
+import { AnimatePresence,motion } from 'framer-motion';
+import Container from '../containers/Container';
+import Button from '../buttons/Button';
+import { IconMenu,IconMoon,IconSun } from '@tabler/icons-react';
+
+const NavBarLinkList = () => navbarLinkList.map( ( item,index ) => (
+    <li className='list-none' key={ item.label } >
+        <NavLink
+            onClick={ () => setIsMenuOpen( false ) }
+            className='capitalize font-bold text-dark dark:text-white !text-opacity-40 [&.active]:!text-opacity-100 hover:text-opacity-80 transition-all duration-300'
+            to={ item.link }>
+            { item.label }
+        </NavLink>
+    </li>
+) )
 
 const Header = () => {
-    const { pathname } = useLocation()
     const [ isMenuOpen,setIsMenuOpen ] = useState( false );
     const [ isDarkMode,toggleDarkMode ] = useDarkMode();
 
-    const NavBarLinkList = () => navbarLinkList.map( ( item,index ) => (
-        <NavbarItem key={ item.label } >
-            <Link as={ NavLink } onClick={ () => setIsMenuOpen( false ) } className='capitalize [&.active]:font-bold transition-all duration-1000' color={ pathname === item.link ? "" : 'foreground' } to={ item.link }>
-                { item.label }
-            </Link>
-        </NavbarItem>
-    ) )
+    const toggleMenu = () => setIsMenuOpen( prevMode => !prevMode );
 
     return (
         <>
-            {/* <nav className='flex gap-4 items-center h-28'>
-                <NavLink to='/' className=' text-center' >
-                    <div className='text-2xl font-medium'>&lt;RR/&gt;</div>
-                </NavLink>
-                <div className='flex gap-4 items-center ms-auto'>
-                    <NavLink className='' to='/'>About</NavLink>
-                    <NavLink className='' to='/projects'>Work</NavLink>
-                    <NavLink className='' to='/contact'>Testimonial</NavLink>
-                    <NavLink className='' to='/resume'>Contact</NavLink>
-                </div>
-                <Button>
-                    Download CV
-                </Button>
-            </nav> */}
-
-            {/* <Navbar
-                // shouldHideOnScroll 
-                className=''
+            <motion.header
+                className='sticky top-0 start-0 end-0 w-full z-50 bg-white dark:bg-dark border-b border-dashed border-gray-400'
+                variants={ {
+                    hidden: { opacity: 0,y: -100 },
+                    visible: { opacity: 1,y: 0 },
+                } }
+                initial="hidden"
+                animate="visible"
+                transition={ { type: "spring",stiffness: 100,duration: 0.5 } }
+                viewport={ { once: true } }
             >
-                <NavbarBrand>
-                    <AppLogo />
-                </NavbarBrand>
-                <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                    <NavBarLinkList />
-                </NavbarContent>
-                <NavbarContent justify="end">
-                    <NavbarItem>
-                        <Button as={ Link } href="/assets/pdf/resume/Rajat-Resume-2xp.pdf" >
+                <Container className=''>
+                    <nav className='flex gap-4 items-center h-20'>
+                        <div className='me-auto'>
+                            <NavLink to='/'>
+                                <img className='block dark:hidden' src="/assets/logos/brand.svg" alt="" />
+                                <img className='hidden dark:block' src="/assets/logos/brand-dark.svg" alt="" />
+                            </NavLink>
+                        </div>
+                        <ul className='hidden md:flex gap-10 items-center ms-auto '>
+                            <NavBarLinkList />
+                        </ul>
+                        {/* https://drive.google.com/file/d/1SS5A2yYU8kg0t9xFDug6jjrDveI75xMk/view?usp=drive_link */ }
+                        {/* <Button Component={ Link } target='_blank' to='https://drive.google.com/file/d/1SS5A2yYU8kg0t9xFDug6jjrDveI75xMk/view?usp=drive_link'>
                         Download CV
-                        </Button>
-                        </NavbarItem>
-                        </NavbarContent>
-                        </Navbar> */}
-
-
-            <Navbar
-                isMenuOpen={ isMenuOpen }
-                // shouldHideOnScroll
-                onMenuOpenChange={ setIsMenuOpen }>
-                <NavbarContent>
-                    <NavbarBrand as={ NavLink } to='/'>
-                        <AppLogo />
-                    </NavbarBrand>
-                </NavbarContent>
-
-                <NavbarContent className="hidden sm:flex gap-4" justify="center">
-                    {/* <NavbarItem>
-                        <Link color="foreground" href="#">
-                        Features
-                        </Link>
-                        </NavbarItem>
-                        <NavbarItem isActive>
-                        <Link href="#" aria-current="page">
-                        Customers
-                        </Link>
-                        </NavbarItem>
-                        <NavbarItem>
-                        <Link color="foreground" href="#">
-                        Integrations
-                        </Link>
-                        </NavbarItem> */}
-                    <NavBarLinkList />
-                </NavbarContent>
-                <NavbarContent className="hidden sm:flex gap-4" justify="end">
-                    <NavbarItem>
-                        <Button
-                            onClick={ toggleDarkMode }
-                            className="transition-all duration-300"
-                            variant="ghost"
-                            isIconOnly
-                        >
-                            { isDarkMode ? <IconSun /> : <IconMoon /> }
-                            {/* { isDarkMode ? 'Light Mode' : 'Dark Mode' } */ }
-                        </Button>
-                    </NavbarItem>
-                    <NavbarItem>
-                        <Button color='primary' as={ Link } href="/assets/pdf/resume/Rajat-Resume-2xp.pdf" >
-                            <span className=''>Download CV</span>
-                        </Button>
-                    </NavbarItem>
-                </NavbarContent>
-                <NavbarMenu>
-                    <NavbarContent className='flex flex-col justify-center'>
-                        <NavBarLinkList />
-                        <NavbarItem>
-                            <Button color='primary' as={ Link } href="/assets/pdf/resume/Rajat-Resume-2xp.pdf" >
-                                <span className=''>Download CV</span>
+                        </Button> */}
+                        <div>
+                            <Button
+                                onClick={ toggleDarkMode }
+                                className="transition-all duration-300 rounded-full relative"
+                                varient='none'
+                            >
+                                <IconMoon className={ `block size-6 transition-all duration-500 stroke-current stroke-0 fill-white ${isDarkMode ? 'scale-y-100 opacity-100' : 'scale-y-0 h-0 opacity-0'}` } />
+                                <IconSun className={ `block size-6 transition-all duration-500 stroke-current stroke-4 fill-dark ${isDarkMode ? 'scale-y-0 h-0 opacity-0' : 'scale-y-100 opacity-100'}` } />
                             </Button>
-                        </NavbarItem>
-                    </NavbarContent>
-                </NavbarMenu>
-                <NavbarContent className="sm:hidden" justify='end'>
-                    <NavbarItem>
-                        <Button
-                            onClick={ toggleDarkMode }
-                            className="transition-all duration-300"
-                            variant="ghost"
-                            isIconOnly
-                            size='sm'
-                        >
-                            { isDarkMode ? <IconSun size='20' /> : <IconMoon size='20' /> }
-                            {/* { isDarkMode ? 'Light Mode' : 'Dark Mode' } */ }
-                        </Button>
-                    </NavbarItem>
-                    <NavbarMenuToggle
-                        aria-label={ isMenuOpen ? "Close menu" : "Open menu" }
-                    />
-                </NavbarContent>
-            </Navbar>
+                        </div>
+
+                        <div className='md:hidden'>
+                            <MenuIcon open={ isMenuOpen } onClick={ toggleMenu } />
+                        </div>
+                    </nav>
+                </Container>
+
+
+            </motion.header>
+            <Offcanvas open={ isMenuOpen } onClick={ toggleMenu } />
         </>
     )
 }
 
 export default Header
 
-const AppLogo = () => {
+const Offcanvas = ( { open = false,onHide } ) => {
+
+    useEffect( () => {
+        if ( open ) {
+            document.body.style.overflow = 'hidden';
+        } else {
+            document.body.style.overflow = 'auto';
+        }
+    },[ open ] )
+
     return (
-        <div className='flex items-center gap-2'>
-            <div>
-                <Image className='size-9 invert dark:invert-0' src='/assets/logos/logo-v2.svg' alt='Brand' />
-            </div>
-            <div>
-                <p className='text-base font-medium'>Rajat Karmokar</p>
-                <p className='text-xs/none tracking-[0.13em] font-light '>React Developer</p>
-            </div>
-        </div>
+        <motion.div className={ `fixed inset-0 mt-20 py-5 z-40 bg-white dark:bg-dark transition-all duration-500 shadow-lg ${open ? 'translate-y-0 scale-y-100 opacity-100 ' : 'translate-y-full scale-y-0 opacity-0 '}` }>
+            <Container>
+                <ul className='space-y-2'>
+                    <NavBarLinkList />
+                </ul>
+            </Container>
+        </motion.div>
     )
 }
+
+const MenuIcon = ( { open = false,onClick } ) => {
+    return (
+        <div className="cursor-pointer" onClick={ onClick }>
+            <svg
+                xmlns="http://www.w3.org/2000/svg"
+                width="24"
+                height="24"
+                viewBox="0 0 24 24"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                className={ `transition-transform duration-300 ease-in-out ${open ? 'rotate- 45' : ''}` }
+            >
+                <path stroke="none" d="M0 0h24v24H0z" fill="none" />
+                <path
+                    d="M4 6h16"
+                    className={ `transition-transform duration-300 ease-in-out ${open ? 'translate-x-2 rotate-45' : ''}` }
+                />
+                <path
+                    d="M7 12h13"
+                    className={ `transition-opacity duration-300 ease-in-out ${open ? 'opacity-0' : 'opacity-100'}` }
+                />
+                <path
+                    d="M10 18h10"
+                    className={ `transition-transform duration-300 ease-in-out ${open ? '-translate-x-4 scale-x-150 translate-y-4 -rotate-45' : ''}` }
+                />
+            </svg>
+        </div>
+    );
+};
+

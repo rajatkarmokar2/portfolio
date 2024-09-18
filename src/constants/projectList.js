@@ -64,9 +64,9 @@ export const projectList = [
             "Collaboration with UI/UX Designer and Backend for good development",
         ],
         images: {
-            // mobile:'/assets/images/no-preview/no-preview.jfif',
+            // mobile:'/assets/images/no-preview/no-preview.jpg',
             // desktop:'/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
-            noPreview: '/assets/images/no-preview/no-preview.jfif',
+            noPreview: '/assets/images/no-preview/no-preview.jpg',
         },
         technologies: [
             {
@@ -256,9 +256,9 @@ export const projectList = [
             "Using modern framework like Next.js for optimal SSR web application",
         ],
         images: {
-            // mobile:'/assets/images/no-preview/no-preview.jfif',
+            // mobile:'/assets/images/no-preview/no-preview.jpg',
             // desktop:'/assets/images/projects/forfend.co-screenshots/Pixelbook-Go-1643x924.png',
-            noPreview: '/assets/images/no-preview/no-preview.jfif',
+            noPreview: '/assets/images/no-preview/no-preview.jpg',
         },
         technologies: [
             {

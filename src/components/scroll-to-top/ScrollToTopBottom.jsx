@@ -1,6 +1,6 @@
 import React,{ useState,useEffect } from 'react';
-import { Button } from '@nextui-org/react'; // Assuming you're using NextUI for the button
 import { IconArrowUp } from '@tabler/icons-react'; // Using an up arrow icon
+import Button from '../buttons/Button';
 
 const ScrollToTopButton = () => {
     const [ isVisible,setIsVisible ] = useState( false );
