@@ -1,4 +1,4 @@
-import{c as S,j as ce,g as F,r as le,R as j}from"./index-C9YQM4Xr.js";/**
+import{c as S,j as ce,g as F,r as le,R as j}from"./index-DWsKY1mc.js";/**
  * @license @tabler/icons-react v3.14.0 - MIT
  *
  * This source code is licensed under the MIT license.
