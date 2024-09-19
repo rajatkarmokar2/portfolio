@@ -6,6 +6,8 @@ import useScrollToTop from './hooks/useScrollToTop'
 const Layout = lazy( () => import( './layouts/Layout' ) )
 import './App.css'
 
+
+
 function App () {
   useScrollToTop()
   return (
