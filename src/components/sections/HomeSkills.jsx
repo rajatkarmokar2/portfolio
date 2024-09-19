@@ -24,7 +24,7 @@ const HomeSkills = () => {
     },[ speed ] );
 
     return (
-        <div className='bg-blue-50 dark:bg-blue-900 overflow-hidden'>
+        <div className='bg-blue-50 dark:bg-blue-900 overflow-hidden py-6 lg:py-0'>
             <Container>
                 <div className='grid grid-cols-1 lg:grid-cols-2'>
                     <div>
@@ -88,8 +88,8 @@ const HomeSkills = () => {
                         </motion.div>
                     </div>
 
-                    <div className=' my-auto relative'>
-                        <table className='space-y-3 mx-auto'>
+                    <div className=' my-auto relative py-6'>
+                        <table className='mx-auto'>
                             { skillList.map( ( skill,index ) => {
                                 return (
                                     <motion.tr
@@ -104,10 +104,10 @@ const HomeSkills = () => {
                                         transition={ { delay: ( index / 10 ) + 1 } }
                                         viewport={ { once: true } }
                                         key={ index } >
-                                        <td className='text-xl font-medium'>{ skill.name }</td>
+                                        <td className=' md:text-xl font-medium py-1'>{ skill.name }</td>
                                         <td className='text-xl font-medium px-2'>:</td>
                                         <td className='text-xl font-medium'>
-                                            <div className='w-[200px] rounded h-2 bg-dark dark:bg-white !bg-opacity-20'>
+                                            <div className='w-[200px] rounded-md overflow-hidden h-2 bg-dark dark:bg-white !bg-opacity-20'>
                                                 <motion.div
                                                     viewport={ { once: true } }
                                                     whileInView={ { width: [ 0,skill.level + '%' ] } }

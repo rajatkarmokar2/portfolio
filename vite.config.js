@@ -1,10 +1,11 @@
 import { defineConfig } from 'vite'
 import react from '@vitejs/plugin-react-swc'
 import { VitePluginRadar } from 'vite-plugin-radar'
+// const ASSET_URL = process.env.VITE_ASSETS_URL || '';
 
 // https://vitejs.dev/config/
 export default defineConfig( {
-  base: '/portfolio/',
+  base: `/portfolio/`,
   plugins: [
     react(),
     VitePluginRadar( {

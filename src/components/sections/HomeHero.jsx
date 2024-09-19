@@ -75,8 +75,8 @@ const HomeHero = () => {
                             transition={ { type: "spring",stiffness: 100,duration: 0.5,delay: 1 } }
                             viewport={ { once: true } }
                         >
-                            {/* <img className='rounded-full max-w-[200px] md:max-w-full' src="/assets/images/profile/profile-pic.png" /> */ }
-                            <img className='w-full rounded-[10vw_5vw] transition-all duration-1000' src="/assets/images/29169113_7520071.jpg" alt='' />
+                            {/* <img className='rounded-full max-w-[200px] md:max-w-full' src="assets/images/profile/profile-pic.png" /> */ }
+                            <img className='w-full rounded-[10vw_5vw] transition-all duration-1000' src="assets/images/29169113_7520071.jpg" alt='' />
                         </motion.div>
                         {/* <motion.div
                             transition={ { repeat: Infinity,duration:3 } }

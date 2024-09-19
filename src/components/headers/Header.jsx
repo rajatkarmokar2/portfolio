@@ -41,8 +41,8 @@ const Header = () => {
                     <nav className='flex gap-4 items-center h-20'>
                         <div className='me-auto'>
                             <NavLink to='/'>
-                                <img className='block dark:hidden' src="/assets/logos/brand.svg" alt="" />
-                                <img className='hidden dark:block' src="/assets/logos/brand-dark.svg" alt="" />
+                                <img className='block dark:hidden' src="assets/logos/brand.svg" alt="" />
+                                <img className='hidden dark:block' src="assets/logos/brand-dark.svg" alt="" />
                             </NavLink>
                         </div>
                         <ul className='hidden md:flex gap-10 items-center ms-auto '>
