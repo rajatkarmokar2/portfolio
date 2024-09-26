@@ -1,0 +1,1 @@
+import{j as e}from"./index-B_M-anHw.js";const x=({children:t})=>e.jsx("h1",{className:"text-[clamp(46px,5vw,56px)] mb-3 font-bold lg:leading-tight text-dark dark:text-white",children:t});export{x as H};
