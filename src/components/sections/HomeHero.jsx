@@ -57,7 +57,7 @@ const HomeHero = () => {
                                 transition={ { type: 'just',duration: 0.5,delay: 1.5 } }
                                 viewport={ { once: true } }
                             >
-                                <Button className='mt-3' component={ Link } target='_blank' to="https://drive.google.com/file/d/1SS5A2yYU8kg0t9xFDug6jjrDveI75xMk/view?usp=drive_link" >
+                                <Button className='mt-3' component={ Link } target='_blank' to="https://drive.google.com/file/d/1iob69RQ-uCG9l--i3hnBFAz8cNwa78eL/view?usp=sharing" >
                                     Download CV
                                 </Button>
                             </motion.div>
