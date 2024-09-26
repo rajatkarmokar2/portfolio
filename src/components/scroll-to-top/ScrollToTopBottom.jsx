@@ -31,14 +31,12 @@ const ScrollToTopButton = () => {
     };
 
     return (
-        <Button
-            isIconOnly
-            className={ `fixed bottom-4 right-4 z-50 transition-opacity ${isVisible ? 'opacity-100' : 'opacity-0'
-                }` }
+        <button
+            className={ `fixed bottom-4 right-4 z-50 transition-opacity size-9 rounded-full bg-darkblue dark:bg-white shadow-lg flex items-center justify-center ${isVisible ? 'opacity-100' : 'opacity-0'}` }
             onClick={ scrollToTop }
         >
-            <IconArrowUp />
-        </Button>
+            <IconArrowUp className=' dark:stroke-darkblue stroke-white' />
+        </button>
     );
 };
 

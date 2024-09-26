@@ -3,7 +3,8 @@ import Container from '../components/containers/Container'
 import { projectList } from '../constants/projectList'
 import ProjectCard from '../components/cards/ProjectCard'
 import { Helmet } from 'react-helmet'
-import SectionH1 from '../components/headings/SectionH1'
+import { motion } from 'framer-motion'
+import HeroH1 from '../components/headings/HeroH1'
 
 const Projects = () => {
   return (
@@ -12,12 +13,24 @@ const Projects = () => {
         <title>Projects - Rajat Karmokar</title>
       </Helmet>
       <Container>
-        <div className='my-14 text-center'>
-          <SectionH1>Projects</SectionH1>
+        <div className='pt-28 mb-14 text-center'>
+          <HeroH1>Projects</HeroH1>
         </div>
         <div className='my-14 grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6'>
           { projectList.map( ( item,index ) =>
-            <ProjectCard key={ index } { ...item } />
+            <motion.div key={ index }
+              initial={ {
+                opacity: 0,
+                y: 50,
+              } }
+              animate={ {
+                opacity: 1,
+                y: 0,
+              } }
+              transition={ { type: 'just',delay: index / 8 } }
+            >
+              <ProjectCard  { ...item } />
+            </motion.div>
           ) }
         </div>
       </Container>

@@ -7,19 +7,19 @@ import { Link } from 'react-router-dom'
 
 const HomeHero = () => {
     return (
-        <section className=''>
+        <section className='relative'>
             <Container>
-                <div className='md:h-[500px] max-h-max grid grid-cols-1 md:grid-cols-2 items-center gap-4 gap-y-10'>
+                <div className='min-h-max h-screen grid grid-cols-1 lg:grid-cols-2 items-center gap-4 gap-y-10 py-32'>
                     <div className=''>
-                        <div className='text-center md:text-start space-y-3 '>
+                        <div className='text-center lg:text-start space-y-3 '>
                             <motion.div
                                 variants={ {
                                     hidden: { opacity: 0,y: -100 },
                                     visible: { opacity: 1,y: 0 },
                                 } }
                                 initial="hidden"
-                                whileInView="visible"
-                                transition={ { type: "spring",stiffness: 100,duration: 0.5,delay: 0.6 } }
+                                animate="visible"
+                                transition={ { type: 'just',duration: 0.5,delay: 0.6 } }
                                 viewport={ { once: true } }
                             >
                                 <div className=' bg-grad ient-text animate-gr adient-text bg-clip-text text-tra nsparent'>
@@ -34,12 +34,12 @@ const HomeHero = () => {
 
                             <motion.div className='lg:w-[400px]'
                                 variants={ {
-                                    hidden: { opacity: 0,scaleX: 0.5,transformOrigin: 'left center' },
-                                    visible: { opacity: 1,scaleX: 1 },
+                                    hidden: { opacity: 0 },
+                                    visible: { opacity: 1 },
                                 } }
                                 initial="hidden"
-                                whileInView="visible"
-                                transition={ { type: "spring",stiffness: 100,duration: 0.5,delay: 0.8 } }
+                                animate="visible"
+                                transition={ { type: 'just',duration: 0.5,delay: 0.8 } }
                                 viewport={ { once: true } }
                             >
                                 <p>
@@ -49,34 +49,38 @@ const HomeHero = () => {
 
                             <motion.div
                                 variants={ {
-                                    hidden: { opacity: 0,y: 100 },
+                                    hidden: { opacity: 0,y: 10 },
                                     visible: { opacity: 1,y: 0 },
                                 } }
                                 initial="hidden"
-                                whileInView="visible"
-                                transition={ { type: "spring",stiffness: 100,duration: 0.5,delay: 1.5 } }
+                                animate="visible"
+                                transition={ { type: 'just',duration: 0.5,delay: 1.5 } }
                                 viewport={ { once: true } }
                             >
-                                <Button className='mt-3' Component={ Link } to="https://drive.google.com/file/d/1SS5A2yYU8kg0t9xFDug6jjrDveI75xMk/view?usp=drive_link" >
+                                <Button className='mt-3' component={ Link } target='_blank' to="https://drive.google.com/file/d/1SS5A2yYU8kg0t9xFDug6jjrDveI75xMk/view?usp=drive_link" >
                                     Download CV
                                 </Button>
                             </motion.div>
                         </div>
                     </div>
 
-                    <div className='relative'>
+                    <div className='relative m-auto'>
                         <motion.div
                             variants={ {
                                 hidden: { y: 100,opacity: 0 },
                                 visible: { y: 0,opacity: 1 },
                             } }
                             initial="hidden"
-                            whileInView="visible"
-                            transition={ { type: "spring",stiffness: 100,duration: 0.5,delay: 1 } }
+                            animate="visible"
+                            transition={ { type: 'just',duration: 0.5,delay: 1 } }
                             viewport={ { once: true } }
                         >
-                            {/* <img className='rounded-full max-w-[200px] md:max-w-full' src="assets/images/profile/profile-pic.png" /> */ }
-                            <img className='w-full rounded-[10vw_5vw] transition-all duration-1000' src="assets/images/29169113_7520071.jpg" alt='' />
+                            {/* <img className='rounded-full max-w-[200px] lg:max-w-full' src="assets/images/profile/profile-pic.png" /> */ }
+                            <img className='size-[300px] transition-all duration-1000 drop-shadow-2xl'
+                                // src="assets/images/29169113_7520071.jpg" 
+                                src="assets/images/profile/profile-pic.png"
+                                alt=''
+                            />
                         </motion.div>
                         {/* <motion.div
                             transition={ { repeat: Infinity,duration:3 } }

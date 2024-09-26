@@ -235,13 +235,13 @@ export const projectList = [
         },
         technologies: [
             {
-                name: "React Js",
-                icon: IconBrandReact,
+                name: "Next Js",
+                icon: IconBrandNextjs,
                 color: 'skyblue',
             },
             {
-                name: "Bootstrap",
-                icon: IconBrandBootstrap,
+                name: "Tailwind Css",
+                icon: IconBrandTailwind,
                 color: 'blue',
             },
         ]

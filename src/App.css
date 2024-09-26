@@ -1,31 +1,41 @@
-body {
-    scrollbar-width: thin !important;
-    scrollbar-color: black white !important;
+html {
+    --scrollbar-thumb: #242A41;
+    --scrollbar-track: white;
 }
 
-::-webkit-scrollbar {
-    width: 12px !important;
+html.dark {
+    --scrollbar-thumb: white;
+    --scrollbar-track: #242A41;
 }
 
-::-webkit-scrollbar-track {
-    background: transparent !important;
+html {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar-thumb) var(--scrollbar-track);
 }
 
-::-webkit-scrollbar-thumb {
-    background-color: black !important;
-    border-radius   : 10px !important;
-    border          : 2px solid white !important;
+html::-webkit-scrollbar {
+    width: 12px;
+}
+
+html::-webkit-scrollbar-track {
+    background: var(--scrollbar-track);
+}
+
+html::-webkit-scrollbar-thumb {
+    background-color: var(--scrollbar-thumb);
+    border-radius   : 10px;
+    border          : 2px solid var(--scrollbar-track);
 }
 
 @supports (-ms-overflow-style: none) {
-    ::-ms-scrollbar {
-        width           : 8px !important;
-        background-color: white !important;
+    html::-ms-scrollbar {
+        width           : 8px;
+        background-color: var(--scrollbar-track);
     }
-
-    ::-ms-scrollbar-thumb {
-        background-color: black !important;
-        border-radius   : 10px !important;
-        border          : 2px solid white !important;
+    
+    html::-ms-scrollbar-thumb {
+        background-color: var(--scrollbar-thumb);
+        border-radius   : 10px;
+        border          : 2px solid var(--scrollbar-track);
     }
 }
