@@ -1,4 +1,5 @@
 import { lazy } from 'react'
+import Demo from '../pages/Demo'
 
 const Home = lazy( () => import( '../pages/Home' ) )
 const Projects = lazy( () => import( '../pages/Projects' ) )
@@ -13,17 +14,22 @@ export const routes = [
     {
         path: '/coming',
         title: 'Coming',
-        component: Coming,
+        element: <Coming />,
     },
     {
         path: '/loading',
         title: 'Loading',
-        component: Loading,
+        element: <Loading />,
+    },
+    {
+        path: '/demo',
+        title: 'Demo',
+        element: <Demo />,
     },
     {
         path: '*',
         title: 'Error404',
-        component: Error404,
+        element: <Error404 />,
     },
 ]
 
@@ -31,26 +37,26 @@ export const layoutRoutes = [
     {
         path: '/',
         title: 'Home',
-        component: Home,
+        element: <Home />,
     },
     {
         path: '/projects',
         title: 'Projects',
-        component: Projects,
+        element: <Projects />,
     },
     {
         path: '/projects/:projectId',
         title: 'Projects Details',
-        component: ProjectDetails,
+        element: <ProjectDetails />,
     },
     {
         path: '/contact',
         title: 'Contact',
-        component: Contact,
+        element: <Contact />,
     },
     {
         path: '/resume',
         title: 'Resume',
-        component: Resume,
+        element: <Resume />,
     },
 ]

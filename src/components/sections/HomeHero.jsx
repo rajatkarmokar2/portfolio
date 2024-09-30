@@ -9,9 +9,8 @@ const HomeHero = () => {
     return (
         <section className='relative'>
             <Container>
-                <div className='min-h-max h-screen grid grid-cols-1 lg:grid-cols-2 items-center gap-4 gap-y-10 py-32'>
-                    <div className=''>
-                        <div className='text-center lg:text-start space-y-3 '>
+                <div className='min-h-max h-screen py-20 flex flex-col justify-center items-center'>
+                        <div className='text-center space-y-3 '>
                             <motion.div
                                 variants={ {
                                     hidden: { opacity: 0,y: -100 },
@@ -32,7 +31,7 @@ const HomeHero = () => {
                                 </div>
                             </motion.div>
 
-                            <motion.div className='lg:w-[400px]'
+                            <motion.div className='inline-block lg:w-[400px]'
                                 variants={ {
                                     hidden: { opacity: 0 },
                                     visible: { opacity: 1 },
@@ -62,34 +61,6 @@ const HomeHero = () => {
                                 </Button>
                             </motion.div>
                         </div>
-                    </div>
-
-                    <div className='relative m-auto'>
-                        <motion.div
-                            variants={ {
-                                hidden: { y: 100,opacity: 0 },
-                                visible: { y: 0,opacity: 1 },
-                            } }
-                            initial="hidden"
-                            animate="visible"
-                            transition={ { type: 'just',duration: 0.5,delay: 1 } }
-                            viewport={ { once: true } }
-                        >
-                            {/* <img className='rounded-full max-w-[200px] lg:max-w-full' src="assets/images/profile/profile-pic.png" /> */ }
-                            <img className='size-[300px] transition-all duration-1000 drop-shadow-2xl'
-                                // src="assets/images/29169113_7520071.jpg" 
-                                src="assets/images/profile/profile-pic.png"
-                                alt=''
-                            />
-                        </motion.div>
-                        {/* <motion.div
-                            transition={ { repeat: Infinity,duration:3 } }
-                            animate={ {
-                                y: [ 0,50,0,-50,0 ],
-                                opacity: [ 0,0,1,0,0 ],
-                            } } className='absolute size-[100px] -translate- x-1/2 -translate-y- 1/2 top-0 start-0  bg-violet-300'></motion.div> */}
-                        {/* <div className='absolute size-[100px] -translate- x-1/2 translate-y- 1/2 right-0 bottom-0 bg-violet-300'></div> */ }
-                    </div>
                 </div>
             </Container>
         </section>

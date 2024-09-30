@@ -6,8 +6,6 @@ import useScrollToTop from './hooks/useScrollToTop'
 const Layout = lazy( () => import( './layouts/Layout' ) )
 import './App.css'
 
-
-
 function App () {
   useScrollToTop()
   return (
@@ -19,7 +17,7 @@ function App () {
               <Route
                 key={ item.path }
                 path={ item.path }
-                element={<item.component />}
+                element={ item.element }
               />
             ) ) }
           </Route>
@@ -28,7 +26,7 @@ function App () {
             <Route
               key={ item.path }
               path={ item.path }
-              element={ <item.component /> }
+              element={ item.element }
             />
           ) ) }
         </Routes>

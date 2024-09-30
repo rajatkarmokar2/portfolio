@@ -2,7 +2,6 @@ import React from 'react'
 import Container from '../components/containers/Container'
 import { Link,NavLink,useParams } from 'react-router-dom'
 import { projectList } from '../constants/projectList'
-import SectionH1 from '../components/headings/SectionH1'
 import HeroH1 from '../components/headings/HeroH1'
 import { Helmet } from 'react-helmet'
 import { IconExternalLink } from '@tabler/icons-react'
@@ -29,8 +28,8 @@ const ProjectDetails = () => {
                 </div>
 
                 <div className='space-y-20 pb-20'>
-                    <div className='grid lg:grid-cols-2 items-center'>
-                        <div>
+                    <div className='grid lg:grid-cols-2 gap-16 items-center'>
+                        <div className='order-1 lg:order-2'>
                             { project.images.noPreview &&
                                 <div className='aspect-video'>
                                     <img className='h-full w-full object-fill rounded-xl' src={ project.images.noPreview } />
@@ -43,16 +42,13 @@ const ProjectDetails = () => {
                                             <IconExternalLink className="m-auto size-10 stroke-white transition-all scale-50 group-hover:scale-100" />
                                         </Link>
                                     </div>
-                                    {/* <div className='md: flex justify-center'>
-                                        <img className='w-1/2 md:w-full mx-auto rounded-xl' src={ project.images.mobile } />
-                                    </div> */}
                                 </div>
                             }
                         </div>
 
-                        <div className='px-10 py-8'>
+                        <div className=''>
                             <HeroH1>{ project.title }</HeroH1>
-                            <p className='mb-5 max-w-[40rem] mx-auto'>{ project.description }</p>
+                            <p className='mb-5 max-w-[40rem] mx-auto text-justify'>{ project.description }</p>
                             <div className='flex gap-4 flex-wrap'>
                                 { project.technologies.map( ( item,index ) =>
                                     <div key={index} className='flex flex-col items-center group relative cursor-pointer'>
@@ -66,7 +62,7 @@ const ProjectDetails = () => {
                         </div>
                     </div>
 
-                    <div className='text-center'>
+                    {/* <div className='text-center'>
                         <SectionH1>Roles</SectionH1>
                         <ul className='divide-y border rounded-xl'>
                             { project.details.map( ( item,index ) =>
@@ -75,7 +71,7 @@ const ProjectDetails = () => {
                                 </li>
                             ) }
                         </ul>
-                    </div>
+                    </div> */}
                 </div>
             </Container>
         </>

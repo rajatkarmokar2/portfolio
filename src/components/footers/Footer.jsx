@@ -26,7 +26,7 @@ const Footer = () => {
                             ) ) }
                         </div>
                         <div className='text-center sm:text-end flex-grow text-sm text-nowrap'>
-                            Made with ❤️ by Rajat.
+                            &copy; Rajat Karmokar | {new Date().getFullYear()}
                         </div>
                     </div>
                 </div>

@@ -1,5 +1,5 @@
 import { useEffect,useRef,useState } from 'react';
-import { NavLink } from 'react-router-dom';
+import { NavLink,useLocation } from 'react-router-dom';
 import { navbarLinkList } from '../../constants/navbarLinkList';
 import useDarkMode from '../../hooks/useDarkMode';
 import { motion } from 'framer-motion';
@@ -10,7 +10,6 @@ import { IconMoon,IconSun } from '@tabler/icons-react';
 const NavBarLinkList = ( { onHide } ) => navbarLinkList.map( ( item,index ) => (
     <li className='list-none' key={ item.label } >
         <NavLink
-            onClick={ onHide }
             className='capitalize font-bold text-dark dark:text-white !text-opacity-40 [&.active]:!text-opacity-100 hover:text-opacity-80 transition-all duration-300'
             to={ item.link }>
             { item.label }
@@ -22,7 +21,11 @@ const Header = () => {
     const [ isMenuOpen,setIsMenuOpen ] = useState( false );
     const [ isDarkMode,toggleDarkMode ] = useDarkMode();
     const headerRef = useRef( null );
+    const { pathname } = useLocation();
 
+    useEffect( () => {
+        setIsMenuOpen( false );
+    },[ pathname ] )
 
     const toggleMenu = () => {
         setIsMenuOpen( prevMode => !prevMode )
@@ -77,10 +80,10 @@ const Header = () => {
                                     className="relative rounded-full cursor-pointer flex items-center justify-center border size-8"
                                 >
                                     <div className={ `absolute transition-transform duration-500 ${isDarkMode ? 'scale-100' : 'scale-0'}` }>
-                                        <IconMoon className="size-6 stroke-0 fill-white" />
+                                        <IconSun className="size-6 stroke-4 fill-white" />
                                     </div>
                                     <div className={ `absolute transition-transform duration-500 ${isDarkMode ? 'scale-0' : 'scale-100'}` }>
-                                        <IconSun className="size-6 stroke-4 fill-dark" />
+                                        <IconMoon className="size-6 stroke-0 fill-dark" />
                                     </div>
                                 </div>
                             </div>

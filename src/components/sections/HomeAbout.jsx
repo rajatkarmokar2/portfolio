@@ -1,36 +1,42 @@
 import React from 'react'
-import SectionH1 from '../headings/SectionH1'
 import Container from '../containers/Container'
-import Button from '../buttons/Button'
+import { motion } from 'framer-motion';
+import SectionH1 from '../headings/SectionH1';
 
 const HomeAbout = () => {
   return (
-    <div className='pt-20'>
+    <div>
       <Container>
-        <div className='mx-auto lg:max-w-2xl '>
-          <div className='text-center'>
-            {/* <div className='flex justify-center mb-4'>
-              <img
-                src='https://via.placeholder.com/150'
-                alt='Profile Picture'
-                className='rounded-full w-32 h-32 border-4 border-white shadow-md hover:shadow-lg transition-shadow duration-300'
-              />
-            </div> */}
-            <h1 className='text-4xl font-bold mb-4'>About Me</h1>
+        <div className='grid grid-cols-1 lg:grid-cols-2 gap-6 items-center'>
+          <div>
+        <SectionH1>Who I Am</SectionH1>
+            <p className='mb-6 text-lg leading-relaxed text-justify'>
+              I'm Rajat Karmokar, a passionate Frontend Developer with over 3+ years of experience specializing in building responsive, high-performance web and mobile applications. With a solid foundation in React, React Native, and JavaScript, I focus on creating user-friendly interfaces and seamless experiences across devices.
+            </p>
+            <p className='mb-6 text-lg leading-relaxed text-justify'>
+              I thrive on tackling complex problems with creative solutions, whether it's optimizing a web app for performance, fixing bugs, or integrating APIs to enhance functionality. My curiosity and enthusiasm for new technologies keep me exploring the ever-evolving landscape of development, always looking for ways to improve my skills.
+            </p>
           </div>
-          <p className='indent-10 mb-6 text-lg leading-relaxed'>
-            I am a <b>Senior Frontend Developer</b> with <b>3 years</b> of experience in Software Development. My expertise lies in modern JavaScript libraries like React.js, Next.js, and Node.js. I am passionate about learning new technologies and applying my skills to build innovative, real-world products.
-          </p>
-          <div className='text-center'>
-            {/* <Button
-              to='mailto:your-email@example.com'
-              className='inline-block px-6 py-3 bg-white text-indigo-600 font-semibold rounded-lg shadow hover:bg-gray-200 transition-colors duration-300'
+          <div className='relative m-auto'>
+            <motion.div
+              variants={ {
+                hidden: { y: 100,opacity: 0 },
+                visible: { y: 0,opacity: 1 },
+              } }
+              initial="hidden"
+              animate="visible"
+              transition={ { type: 'just',duration: 0.5,delay: 1 } }
+              viewport={ { once: true } }
             >
-              Contact Me
-            </Button> */}
+              {/* <img className='rounded-full max-w-[200px] lg:max-w-full' src="assets/images/profile/profile-pic.png" /> */ }
+              <img className='size-[300px] transition-all duration-1000 drop-shadow-2xl'
+                // src="assets/images/29169113_7520071.jpg" 
+                src="assets/images/profile/profile-pic.png"
+                alt=''
+              />
+            </motion.div>
           </div>
         </div>
-
       </Container>
     </div>
   )

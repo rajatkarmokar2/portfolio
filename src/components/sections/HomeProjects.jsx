@@ -1,5 +1,4 @@
 import React from 'react';
-import { useShuffle } from './../../hooks/useShuffle';
 import { projectList } from '../../constants/projectList';
 import Container from '../containers/Container';
 import SectionH1 from '../headings/SectionH1';
@@ -10,7 +9,7 @@ import { motion } from 'framer-motion';
 
 
 const HomeProjects = () => {
-  const projects = useShuffle( projectList ).slice( 0,3 )
+  const projects = projectList.slice( 0,3 )
   return (
     <Container>
       <div className='text-center'>
